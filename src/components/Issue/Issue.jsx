@@ -4,6 +4,7 @@ import ReactTooltip from 'react-tooltip';
 
 import styles from './Issue.module.css';
 import gitPullRequestIcon from '../../assets/pull_request_icon.png';
+import commentIcon from '../../assets/comment.png';
 
 const Issue = ({
   isLast,
@@ -61,28 +62,40 @@ const Issue = ({
               ) : (
                 <div className={styles.OpenBug}></div>
               )}
-              <div>
-                <a href={item.html_url}>{item.title}</a>
-                <span>
-                  {item.labels.map((label) => (
-                    <span
-                      data-tip={label.description}
-                      key={label.id}
-                      style={{
-                        cursor: 'pointer',
-                        backgroundColor: `#${label.color}`,
-                      }}
-                      className={styles.Label}
-                    >
-                      {label.name}
-                      <ReactTooltip
-                        place="bottom"
-                        className={styles.ToolTip}
-                        effect="solid"
-                      />
+              <div style={{ width: '100%' }}>
+                <div className={styles.IssueMainHeading}>
+                  <div>
+                    <a href={item.html_url}>{item.title}</a>
+                    <span>
+                      {item.labels.map((label) => (
+                        <span
+                          data-tip={label.description}
+                          key={label.id}
+                          style={{
+                            cursor: 'pointer',
+                            backgroundColor: `#${label.color}`,
+                          }}
+                          className={styles.Label}
+                        >
+                          {label.name}
+                          <ReactTooltip
+                            place="bottom"
+                            className={styles.ToolTip}
+                            effect="solid"
+                          />
+                        </span>
+                      ))}
                     </span>
-                  ))}
-                </span>
+                  </div>
+                  <div className={styles.CommentContainer}>
+                    <img
+                      style={{ marginRight: 0 }}
+                      src={commentIcon}
+                      alt="icon-comment"
+                    />
+                    <span>{item.comments}</span>
+                  </div>
+                </div>
                 <div className={styles.IssueContent}>
                   <span>#{item.number}</span>
                   <span>

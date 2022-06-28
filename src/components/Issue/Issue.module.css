@@ -5,6 +5,20 @@
   padding: 10px;
   color: #6e7175;
 }
+.IssueMainHeading {
+  display: flex;
+  justify-content: space-between;
+}
+.CommentContainer {
+  cursor: pointer;
+}
+.CommentContainer:hover {
+  color: #0969da;
+}
+.CommentContainer span {
+  margin-left: 4px;
+}
+
 .IssueContainer {
   display: flex;
   align-items: flex-start;

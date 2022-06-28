@@ -3,3 +3,13 @@
   max-width: 90%;
   margin: auto;
 }
+@media (max-width: 768px) {
+  .IssueList {
+    max-width: 95%;
+  }
+}
+@media (max-width: 468px) {
+  .IssueList {
+    max-width: 100%;
+  }
+}
