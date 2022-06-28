@@ -1,0 +1,44 @@
+.IssueHeader {
+  background-color: #f6f8fa;
+  border-bottom: 2px solid #dcdee1;
+  font-size: 1rem;
+  padding: 10px;
+  color: #6e7175;
+}
+.Issue {
+  border-bottom: 2px solid #dcdee1;
+  font-size: 1.1rem;
+  padding: 10px;
+  font-weight: 600;
+}
+.Issue:hover {
+  background-color: #f6f8fa;
+}
+.Issue > a {
+  text-decoration: none;
+}
+.Issue > a {
+  color: black;
+}
+.Issue > a:hover {
+  color: #0969da;
+}
+.IssueContent {
+  font-size: 12px;
+  font-weight: 500;
+  color: #6e7175;
+  margin-top: 4px;
+}
+.IssueContent > span {
+  margin: 0 3px;
+}
+.Label {
+  margin-left: 2px;
+  border-radius: 2em;
+  /* background-color: #d4c5f9; */
+  display: inline-block;
+  padding: 0 7px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+}
