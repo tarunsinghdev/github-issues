@@ -3,6 +3,17 @@
   max-width: 90%;
   margin: auto;
 }
+.IssueHeader {
+  background-color: #f6f8fa;
+  border-bottom: 2px solid #dcdee1;
+  font-size: 1rem;
+  padding: 10px;
+  color: #6e7175;
+}
+.IssueHeader > span:hover {
+  color: black;
+  cursor: pointer;
+}
 @media (max-width: 768px) {
   .IssueList {
     max-width: 95%;

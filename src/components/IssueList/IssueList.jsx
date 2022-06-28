@@ -40,13 +40,11 @@ const IssueList = () => {
       }
     };
   }, [lastElement]);
-
-  // Watch the below code, need to rethink the strategy
   useEffect(() => {
     const calculateOpenClosePullRequest = () => {
       let open = 0,
         close = 0;
-      data.forEach((item) => {
+      issues.forEach((item) => {
         if (item.state === 'open') open++;
         else if (item.state === 'close') close++;
       });
@@ -54,12 +52,16 @@ const IssueList = () => {
       setClosedPullRequestCount(close);
     };
     calculateOpenClosePullRequest();
-  }, [data]);
+  }, [issues]);
 
   return (
     <>
-      {error && error}
+      {error && <strong>{error}</strong>}
       <div className={styles.IssueList}>
+        <div className={styles.IssueHeader}>
+          <span>{openPullRequest ?? 0} Open</span>
+          <span> {closedPullRequestCount ?? 0} Closed</span>
+        </div>
         {issues.map((item, index) => (
           <Issue
             key={item.id}
