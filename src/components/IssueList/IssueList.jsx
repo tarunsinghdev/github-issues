@@ -28,7 +28,8 @@ const IssueList = () => {
   );
 
   useEffect(() => {
-    if (page > TOTAL_PAGE_LIMIT) return;
+    console.log(console.log(page));
+    if (page >= TOTAL_PAGE_LIMIT) return;
 
     const currentElement = lastElement;
     const currentObserver = observer.current;
