@@ -1,5 +1,6 @@
 import { formatDistanceToNow } from 'date-fns';
 import React from 'react';
+import ReactTooltip from 'react-tooltip';
 
 import styles from './Issue.module.css';
 
@@ -51,11 +52,20 @@ const Issue = ({
           <span>
             {item.labels.map((label) => (
               <span
+                data-tip={label.description}
                 key={label.id}
-                style={{ backgroundColor: `#${label.color}` }}
+                style={{
+                  cursor: 'pointer',
+                  backgroundColor: `#${label.color}`,
+                }}
                 className={styles.Label}
               >
                 {label.name}
+                <ReactTooltip
+                  place="bottom"
+                  className={styles.ToolTip}
+                  effect="solid"
+                />
               </span>
             ))}
           </span>

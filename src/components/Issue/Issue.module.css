@@ -42,3 +42,7 @@
   font-weight: 500;
   line-height: 18px;
 }
+.ToolTip {
+  font-size: 12px !important;
+  padding: 4px !important;
+}

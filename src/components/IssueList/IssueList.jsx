@@ -15,8 +15,8 @@ const IssueList = () => {
   const [lastElement, setLastElement] = useState(null);
 
   useEffect(() => {
-    setIssues([...issues, ...data]);
-  }, [data, issues]);
+    setIssues((issues) => [...issues, ...data]);
+  }, [data]);
 
   const observer = useRef(
     new IntersectionObserver((entries) => {
