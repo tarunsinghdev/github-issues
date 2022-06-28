@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import useFetch from '../../hooks/useFetch';
-import { GITHUB_ISSUE_URL } from '../../utils/constant';
+import { GITHUB_ISSUE_URL, TOTAL_PAGE_LIMIT } from '../../utils/constant';
 import Issue from '../Issue/Issue';
 
 import styles from './IssueList.module.css';
@@ -28,6 +28,8 @@ const IssueList = () => {
   );
 
   useEffect(() => {
+    if (page > TOTAL_PAGE_LIMIT) return;
+
     const currentElement = lastElement;
     const currentObserver = observer.current;
 
@@ -39,7 +41,7 @@ const IssueList = () => {
         currentObserver.unobserve(currentElement);
       }
     };
-  }, [lastElement]);
+  }, [lastElement, page]);
   useEffect(() => {
     const calculateOpenClosePullRequest = () => {
       let open = 0,
@@ -68,8 +70,6 @@ const IssueList = () => {
             isLast={issues.length === index + 1}
             setLastElement={setLastElement}
             item={item}
-            closedPullRequestCount={closedPullRequestCount}
-            openPullRequestCount={openPullRequest}
           />
         ))}
         {loading && <strong>Loading...</strong>}
