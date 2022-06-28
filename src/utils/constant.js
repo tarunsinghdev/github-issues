@@ -1,3 +1,3 @@
 export const PAGE_LIMIT = 10;
-export const TOTAL_PAGE_LIMIT = 3;
+export const TOTAL_PAGE_LIMIT = 4;
 export const GITHUB_ISSUE_URL = `https://api.github.com/repos/facebook/react/issues?per_page=${PAGE_LIMIT}`;
