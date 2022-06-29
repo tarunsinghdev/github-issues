@@ -41,7 +41,9 @@ const IssueList = () => {
         currentObserver.unobserve(currentElement);
       }
     };
-  }, [lastElement, page]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lastElement]);
+
   useEffect(() => {
     const calculateOpenClosePullRequest = () => {
       let open = 0,
