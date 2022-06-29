@@ -10,7 +10,9 @@
   justify-content: space-between;
 }
 .CommentContainer {
+  display: flex;
   cursor: pointer;
+  align-items: baseline;
 }
 .CommentContainer:hover {
   color: #0969da;
@@ -85,4 +87,16 @@
   transform: translate(-50%, -50%);
   background: #1a7f37;
   border-radius: 100%;
+}
+
+@media (max-width: 768px) {
+  .Issue {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 468px) {
+  .Issue {
+    font-size: 0.95rem;
+  }
 }
